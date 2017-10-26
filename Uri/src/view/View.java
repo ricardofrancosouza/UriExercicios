@@ -49,17 +49,17 @@ public class View {
 
 				try {
 					
-					Util.getValue(obj, exercicioMap.get(op));
+					Util.getValue(obj, exercicioMap.get(BigDecimal.valueOf(op));
 					Util.getValue(obj);
 					op =0;
 				} catch (Exception e) {
-					System.out.println("Escolha uma opção valida");
+					System.out.println("Escolha uma opÃ§Ã£o valida");
 				}
 
 				// if (!exercicioMap.get(op).equals("")) {
 				// Util.getValue(obj, exercicioMap.get(op));
 				// } else {
-				// System.out.println("Escolha uma opção valida");
+				// System.out.println("Escolha uma opÃ§Ã£o valida");
 				// }
 			}
 
