@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -22,8 +24,13 @@ public class Util {
 							if (method.getName().equals("calcTimeGame")) {
 								int hr1 = 0, hr2 = 0;
 								try {
-									hr1 = System.in.read();
-									hr2 = System.in.read();
+									BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+									try{
+									hr1 = Integer.parseInt(buf.readLine());
+									hr2 = Integer.parseInt(buf.readLine());
+									}catch(Exception e){
+										System.out.println("Insira Numero");
+									}
 								//	String[] args = new String[paramentros];
 									
 									int qtdHors = (int) method.invoke(obj, hr1, hr2);

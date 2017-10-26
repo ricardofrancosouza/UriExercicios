@@ -22,7 +22,7 @@ public class View {
 			Map<BigDecimal, String> exercicioMap = new HashMap<BigDecimal, String>();
 
 			obj = Class.forName("exercise.Exercicios").newInstance();
-			exercicioMap = Util.getExercise(obj);
+			exercicioMap.putAll(Util.getExercise(obj));
 
 			System.out.println("========== SELECIONAR EXERCICIOS =========");
 			for (Map.Entry<BigDecimal, String> entry : exercicioMap.entrySet()) {
@@ -39,8 +39,7 @@ public class View {
 			System.out.println(strBuilder.toString());
 			String exit = "";
 			while (!exit.equals("x")) {
-				BufferedReader buf = new BufferedReader(new InputStreamReader(
-						System.in));
+				BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 				int op = 0;
 				try {
 					op = Integer.parseInt(buf.readLine());
@@ -51,6 +50,7 @@ public class View {
 				try {
 					
 					Util.getValue(obj, exercicioMap.get(op));
+					Util.getValue(obj);
 					op =0;
 				} catch (Exception e) {
 					System.out.println("Escolha uma opção valida");
